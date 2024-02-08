@@ -1,6 +1,6 @@
 import React from "react";
-import LoadingDiv from "../components/LoadingDiv";
-import StandardBtn from "../components/StandardBtn";
+import LoadingDiv from "../../components/common/templates/loading-div/LoadingDiv";
+import StandardBtn from "../../components/common/buttons/standard-btn/StandardBtn";
 
 const InfoPage = () => {
   const handleClick = () => {
