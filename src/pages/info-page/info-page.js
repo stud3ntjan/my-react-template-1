@@ -9,7 +9,7 @@ const InfoPage = () => {
 
   return (
     <div>
-      <h1>Info Page</h1>
+      <h1>Info Page!!!</h1>
       <LoadingDiv />
       <StandardBtn onClick={handleClick} text={"Klick mich"} />
     </div>
