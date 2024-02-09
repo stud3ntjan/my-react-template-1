@@ -11,7 +11,7 @@ const InfoPage = () => {
     <div>
       <h1>Info Page</h1>
       <LoadingDiv />
-      <StandardBtn onClick={handleClick} text="Klick mich" />
+      <StandardBtn onClick={handleClick} text={"Klick mich"} />
     </div>
   );
 };
