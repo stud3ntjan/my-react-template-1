@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { TodosQueries } from "../../api/v1/todos";
 import ToDoItem from "../../components/common/templates/todo-item";
 import styles from "./ToDoPage.module.css";
-import { useState, useEffect } from "react";
 
 function ToDoPage() {
   //Da wir die Werte erst aus der API mit einem HTTP GET holen müssen,
@@ -13,15 +13,25 @@ function ToDoPage() {
   async function fetchTodos() {
     try {
       console.log("Hello world 1 von fetchTodos");
-
       const jsonResponse = await TodosQueries.fetchAllTodos();
       console.log("MY JSON RESPONSE", jsonResponse);
-
       setTodos(jsonResponse);
-    } catch (e) {
-      console.log("Hello world", e);
+    } catch (error) {
+      console.log("Fehler beim Abrufen der Todos:", error);
     }
   }
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
+  return (
+    <div className={styles.mainContainer}>
+      {todos.map((todo, index) => (
+        <ToDoItem key={index} todo={todo}></ToDoItem>
+      ))}
+    </div>
+  );
 
   // Alternative Funktion für den API Aufruf
   // Achtung: Wird nicht verwendet
